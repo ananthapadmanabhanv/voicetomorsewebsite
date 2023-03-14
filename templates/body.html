@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block head %}
+<h1 class="titles">Speech to morse converter</h1>
+{% endblock %}
+
+{% block body %}
+
+<button id="runb" class="btns" onclick="window.location.href='http://127.0.0.1:5000/run_program';" > Record</button>
+
+<script>
+    var button= document.getElementById("runb");
+    
+    button.addEventListener("click", function() {
+    var button=document.getElementById("runb");
+    button.innerHTML="Recording...";
+    
+    
+    setTimeout(function(){
+        button.innerHTML="Record";
+    },5000);
+    
+    });
+</script>
+
+<br>
+<label class="info">TEXT :{{text}} </label>
+
+
+
+<br>
+<label class="info">MORSE:{{morse}}</label>
+
+
+
+
+
+
+{%endblock%}
